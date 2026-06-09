@@ -1,0 +1,28 @@
+# MLflow stores — large, excluded per submission rules
+mlruns/
+mlartifacts/
+mlflow.db
+mlflow.db-journal
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Airflow runtime
+airflow/logs/
+airflow/plugins/
+*.cfg
+
+# OS / editor
+.DS_Store
+
+# Submission artifacts
+*.zip
+
+# Lecture notes / source PDFs (not part of code deliverable)
+lecture_notes/
+OneDrive_*.zip
