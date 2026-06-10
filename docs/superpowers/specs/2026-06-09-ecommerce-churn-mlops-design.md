@@ -96,10 +96,18 @@ Tracking URI read from `config.py` / env var (never hardcoded in Airflow tasks).
 
 ## 4. Data, Models & Tracking
 
-**Dataset:** E-Commerce Customer Churn, ~5,630 rows, ~20 features (`Tenure`,
-`PreferredLoginDevice`, `CityTier`, `WarehouseToHome`, `SatisfactionScore`, `Complain`,
-`OrderCount`, `DaySinceLastOrder`, `CashbackAmount`, …). Target `Churn` (0/1), ~17%
-positive (mildly imbalanced). ~1 MB single file — a copy is committed to `data/`.
+**Dataset:** E-Commerce Customer Churn — `data/ecommerce_churn.csv`, **3,941 rows, 11
+columns** (a cleaned public version of the Kaggle dataset; the prof provided no dataset, so
+we selected our own per the brief). ~207 KB, committed to `data/`.
+
+Columns:
+- **Numeric (8):** `Tenure`, `WarehouseToHome`, `NumberOfDeviceRegistered`,
+  `SatisfactionScore`, `NumberOfAddress`, `Complain`, `DaySinceLastOrder`, `CashbackAmount`
+- **Categorical (2):** `PreferedOrderCat`, `MaritalStatus`
+- **Target:** `Churn` (0/1), **17.1% positive** (mildly imbalanced)
+- **576 missing values present** — makes the imputation step meaningful, not decorative.
+
+Source mirror: https://github.com/delabrilliano/Ecommerce_Churn_Prediction
 
 **Preprocessing** — one `ColumnTransformer` inside a `Pipeline`, reused everywhere:
 - Numeric: median impute → `StandardScaler`
