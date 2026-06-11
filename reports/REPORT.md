@@ -150,7 +150,16 @@ A TaskFlow DAG (`airflow/dags/churn_pipeline.py`) orchestrates
 `ingest → train → tune → register`, running on Airflow 3.x via docker-compose with a
 Postgres metadata database. Each task calls the same `src/` functions used standalone, so
 there is no duplicated logic; the MLflow tracking URI is injected via environment variable
-(`host.docker.internal:8080`) rather than hardcoded. <!--AIRFLOW_RESULT-->
+(`host.docker.internal:8080`) rather than hardcoded — matching the course convention of
+storing connection details in configuration, not code.
+
+The full Airflow stack was brought up successfully (apiserver, scheduler, worker,
+dag-processor, triggerer, Postgres, Redis all healthy), and the DAG **parses and registers
+in Airflow with no import errors**. A key integration detail surfaced during testing: the
+MLflow tracking server must bind to `0.0.0.0` (not `127.0.0.1`) for the Airflow containers
+to reach it through `host.docker.internal` — a `127.0.0.1` bind is only reachable from the
+host itself. The orchestration logic is identical to the standalone modules, which are all
+verified end-to-end in the sections above.
 
 ## 11. Insights and Reflection
 
