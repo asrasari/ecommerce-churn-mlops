@@ -1113,7 +1113,7 @@ git commit -m "Add Airflow DAG orchestrating the churn pipeline"
 # Build the submission zip (<50 MB), excluding venv, mlflow stores, lecture notes.
 set -euo pipefail
 NUMBER="${1:-XXXXXXX}"
-OUT="PRJ-goksinbakir-${NUMBER}.zip"
+OUT="PRJ-asrasari-${NUMBER}.zip"
 rm -f "$OUT"
 zip -r "$OUT" \
   src airflow/dags airflow/docker-compose.yml tests data \
@@ -1131,7 +1131,7 @@ Run:
 chmod +x scripts/package.sh
 ./scripts/package.sh 12345
 ```
-Expected: "Built PRJ-goksinbakir-12345.zip" and a size well under 50 MB (a few hundred KB).
+Expected: "Built PRJ-asrasari-12345.zip" and a size well under 50 MB (a few hundred KB).
 
 - [ ] **Step 3: Write `README.md`**
 

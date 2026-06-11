@@ -1,7 +1,7 @@
 # E-Commerce Customer Churn — End-to-End MLOps with MLflow
 
 **Course:** AIN-3009 Delivering AI Applications with MLOps — Bahçeşehir University
-**Author:** Gökşin Bakır
+**Author:** Asra Sarı (Student No. 2101640)
 
 An end-to-end machine-learning lifecycle system for predicting e-commerce customer
 churn, built around **MLflow**: experiment tracking, model training, Optuna
@@ -97,7 +97,13 @@ pytest -v
 ## 5. Airflow orchestration (optional, Docker)
 
 A TaskFlow DAG runs the pipeline `ingest → train → tune → register`. The MLflow server
-must be running on the host first (the containers reach it via `host.docker.internal`).
+must be running on the host first, **bound to `0.0.0.0`** so the Airflow containers can
+reach it via `host.docker.internal` (a `127.0.0.1` bind is only reachable locally):
+
+```bash
+mlflow server --host 0.0.0.0 --port 8080 \
+  --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlartifacts
+```
 
 ```bash
 cd airflow
@@ -117,7 +123,7 @@ docker compose exec airflow-scheduler airflow dags trigger churn_pipeline
 ## Submission packaging
 
 ```bash
-./scripts/package.sh <student-number>   # builds PRJ-goksinbakir-<number>.zip (<50 MB)
+./scripts/package.sh <student-number>   # builds PRJ-asrasari-<number>.zip (<50 MB)
 ```
 
 The zip **excludes** `venv/`, `mlruns/`, `mlartifacts/`, and `mlflow.db` (they grow large

@@ -1,7 +1,7 @@
 # Design: E-Commerce Customer Churn — End-to-End ML Lifecycle with MLflow
 
 **Course:** AIN-3009 Delivering AI Applications with MLOps — Bahçeşehir University
-**Student:** Gökşin Bakır
+**Student:** Asra Sarı (2101640)
 **Date:** 2026-06-09
 **Project type:** Term Project — Development and Evaluation of a Machine Learning Lifecycle Management System using MLflow
 
@@ -197,7 +197,7 @@ Lightweight `pytest`:
 
 - Final zip **< 50 MB** and downloadable, or it cannot be graded.
 - **Exclude** `venv/`, `mlruns/`, `mlartifacts/`, `mlflow.db` (grow large per run).
-- `scripts/package.sh` produces `PRJ-goksinbakir-<number>.zip` containing only: `src/`,
+- `scripts/package.sh` produces `PRJ-asrasari-<number>.zip` containing only: `src/`,
   `airflow/`, `tests/`, `data/` (or download script), `requirements.txt`, `README.md`,
   `reports/`. `.gitignore` enforces the same exclusions.
 - To show real runs/experiments: upload the `mlruns`/`mlartifacts` to Google Drive and put

@@ -1,7 +1,7 @@
 # Development and Evaluation of an ML Lifecycle Management System using MLflow
 
 **Course:** AIN-3009 Delivering AI Applications with MLOps
-**Author:** Gökşin Bakır
+**Author:** Asra Sarı (Student No. 2101640)
 **Domain:** Retail / e-commerce — customer churn prediction
 
 ---

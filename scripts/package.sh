@@ -3,7 +3,7 @@
 set -euo pipefail
 
 NUMBER="${1:-XXXXXXX}"
-OUT="PRJ-goksinbakir-${NUMBER}.zip"
+OUT="PRJ-asrasari-${NUMBER}.zip"
 cd "$(dirname "$0")/.."
 
 rm -f "$OUT"
