@@ -184,7 +184,13 @@ The committed repository excludes the large MLflow stores (`mlruns/`, `mlartifac
 `mlflow.db`) per the submission size rules. The complete set of runs and experiments is
 available at:
 
-**Google Drive (full MLflow runs):** _<add link here>_
+**Google Drive (full MLflow runs):** https://drive.google.com/file/d/1IR8lmLkruiv5oxtPnw-wiSrEGxijdzj3/view?usp=sharing
+
+The archive contains `mlartifacts/` (logged models, signatures, confusion-matrix and ROC
+plots for all runs) and `mlflow.db` (the SQLite metadata for all 24 training runs, the
+Optuna tuning runs, the 5 monitoring runs, and the model registry). To explore them
+locally: unzip into the project root, start the MLflow server (see `README.md`), and open
+http://127.0.0.1:8080.
 
 To regenerate locally, follow `README.md` (start the server, then run `src.train`,
 `src.tune`, `src.register`, `src.serve`, `src.monitor`).
