@@ -15,7 +15,14 @@ __pycache__/
 # Airflow runtime
 airflow/logs/
 airflow/plugins/
+airflow/config/
 *.cfg
+*.log
+airflow/config_err.txt
+
+# Serving / run outputs
+prod_model/
+predictions.csv
 
 # OS / editor
 .DS_Store
