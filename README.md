@@ -2,6 +2,7 @@
 
 **Course:** AIN-3009 Delivering AI Applications with MLOps — Bahçeşehir University
 **Author:** Asra Sarı (Student No. 2101640)
+**Repository:** https://github.com/asrasari/ecommerce-churn-mlops
 
 An end-to-end machine-learning lifecycle system for predicting e-commerce customer
 churn, built around **MLflow**: experiment tracking, model training, Optuna

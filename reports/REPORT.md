@@ -3,6 +3,7 @@
 **Course:** AIN-3009 Delivering AI Applications with MLOps
 **Author:** Asra Sarı (Student No. 2101640)
 **Domain:** Retail / e-commerce — customer churn prediction
+**Code repository:** https://github.com/asrasari/ecommerce-churn-mlops
 
 ---
 
